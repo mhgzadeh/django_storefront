@@ -1,13 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-
-def calculate():
-    x = 1
-    y = 2
-    return x
+from store.models import Product
 
 
 def say_hello(request):
-    x = calculate()
+    query_set = Product.objects.get(pk=1)
     return render(request, 'hello.html', {'name': 'Mosh'})
