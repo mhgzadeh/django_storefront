@@ -5,7 +5,7 @@
     <ul>
         {% for product in products %}
             <li>
-                {{ product.title }}
+                {{ product.title }} ----- {{ product.collection.title }}
             </li>
         {% endfor %}
     </ul>
