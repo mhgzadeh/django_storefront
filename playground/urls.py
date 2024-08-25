@@ -1,7 +1,8 @@
 from django.urls import path
-from . import views
+
+from playground.views import say_hello
 
 # URLConf
 urlpatterns = [
-    path('hello/', views.say_hello)
+    path('hello/', say_hello)
 ]

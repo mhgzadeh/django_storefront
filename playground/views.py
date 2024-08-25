@@ -1,8 +1,10 @@
+from django.db.models import Q
 from django.shortcuts import render
 
 from store.models import Product
 
 
 def say_hello(request):
-    query_set = Product.objects.get(pk=1)
-    return render(request, template_name='hello.html', context={'name': 'Mosh', 'query_set': query_set})
+    # products = Product.objects.all()
+    products = Product.objects.filter(~Q(inventory__lt=10) | ~Q(inventory__gt=11))
+    return render(request, template_name='hello.html', context={'name': 'Mosh', 'products': list(products)})
