@@ -3,23 +3,23 @@
 {% if name %}
     <h1>Hello {{ name }}</h1>
     <h2>results: {{ results }}</h2>
-    {#    <h2>Orders</h2>#}
-    {#    <ul>#}
-    {#        {% for order in orders %}#}
-    {#            <li>#}
-    {#                order time: {{ order.placed_at }} <br>#}
-    {#                customer name: {{ order.customer.first_name }} {{ order.customer.last_name }} <br>#}
-    {#                <ol>#}
-    {#                    {% for item in order.items.all %}#}
-    {#                        <li>#}
-    {#                            {{ item.product.title }}#}
-    {#                        </li>#}
-    {#                    {% endfor %}#}
-    {#                </ol>#}
+    {#        <h2>Orders</h2>#}
+    {#        <ul>#}
+    {#            {% for order in orders %}#}
+    {#                <li>#}
+    {#                    order time: {{ order.placed_at }} <br>#}
+    {#                    customer name: {{ order.customer.first_name }} {{ order.customer.last_name }} <br>#}
+    {#                    <ol>#}
+    {#                        {% for item in order.items.all %}#}
+    {#                            <li>#}
+    {#                                {{ item.product.title }}#}
+    {#                            </li>#}
+    {#                        {% endfor %}#}
+    {#                    </ol>#}
     {##}
-    {#            </li>#}
-    {#        {% endfor %}#}
-    {#    </ul>#}
+    {#                </li>#}
+    {#            {% endfor %}#}
+    {#        </ul>#}
     {#    <h2>Products</h2>#}
     {#    <ul>#}
     {#        {% for product in products %}#}

@@ -1,8 +1,4 @@
-# from django.db.models import Q, F
-from django.db.models import Min, Max, Avg
 from django.shortcuts import render
-
-from store.models import Product
 
 
 def say_hello(request):
@@ -13,10 +9,15 @@ def say_hello(request):
     # products = Product.objects.filter(id__in=ordered_product_ids).order_by('title')
     # products = Product.objects.select_related('collection').prefetch_related('promotions').filter(
     #     promotions__isnull=False)
-    # orders = Order.objects.select_related('customer').prefetch_related('items__product').order_by(
+
+    # all of them are for reducing the number of the requests to database
+    # it will have a meaning when we are hitting the database
+    # orders = Order.objects.prefetch_related('items__product').order_by(
     #     '-placed_at')[:5]
+    # orders = Order.objects.order_by('-placed_at')[:5]
     # num_orders = Order.objects.all().count()
 
+    # aggregate
     # How many orders do we have?
     # results = Order.objects.all().count()
     # How many units of product 1 have we sold?
@@ -24,6 +25,6 @@ def say_hello(request):
     # How many orders has customer 1 placed?
     # results = Order.objects.filter(customer_id=1).aggregate(count_order=Count('id'))
     # What is the min, max and average price of the products in collection 3?
-    results = Product.objects.filter(collection_id=3).aggregate(
-        min_price=Min('price'), max_price=Max('price'), avg_price=Avg('price'))
-    return render(request, template_name='hello.html', context={'name': 'Mosh', 'results': results})
+    # results = Product.objects.filter(collection_id=3).aggregate(
+    #     min_price=Min('price'), max_price=Max('price'), avg_price=Avg('price'))
+    return render(request, template_name='hello.html', context={'name': 'Mosh', 'orders': orders})
