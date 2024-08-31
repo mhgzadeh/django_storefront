@@ -27,4 +27,8 @@ def say_hello(request):
     # What is the min, max and average price of the products in collection 3?
     # results = Product.objects.filter(collection_id=3).aggregate(
     #     min_price=Min('price'), max_price=Max('price'), avg_price=Avg('price'))
-    return render(request, template_name='hello.html', context={'name': 'Mosh', 'orders': orders})
+
+    # annotate
+    # results = Customer.objects.annotate(is_new=Value(True))[:10]
+    # results = Customer.objects.annotate(new_id=F('id') + 1)
+    return render(request, template_name='hello.html', context={'name': 'Mosh', 'results': list(results)})

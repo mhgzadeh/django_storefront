@@ -2,7 +2,13 @@
 <body>
 {% if name %}
     <h1>Hello {{ name }}</h1>
-    <h2>results: {{ results }}</h2>
+    <h2>Results</h2>
+    <ul>
+        {% for result in results %}
+            <li>{{ result.new_id }}- {{ result.first_name }} {{ result.last_name }}</li>
+        {% endfor %}
+    </ul>
+
     {#        <h2>Orders</h2>#}
     {#        <ul>#}
     {#            {% for order in orders %}#}
