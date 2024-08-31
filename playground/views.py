@@ -1,7 +1,7 @@
-from django.db.models import Count
+from django.db.models import ExpressionWrapper, F, DecimalField
 from django.shortcuts import render
 
-from store.models import Customer
+from store.models import Product
 
 
 def say_hello(request):
@@ -41,5 +41,11 @@ def say_hello(request):
     # )
 
     # grouping
-    results = Customer.objects.annotate(orders_count=Count('orders')).filter(orders_count__gt=0)[:10]
+    # results = Customer.objects.annotate(orders_count=Count('orders')).filter(orders_count__gt=0)[:10]
+
+    # Expression Wrapper
+
+    discounted_price = ExpressionWrapper(
+        F('unit_price') * 0.8, output_field=DecimalField(max_digits=12, decimal_places=2))
+    results = Product.objects.annotate(discounted_price=discounted_price)
     return render(request, template_name='hello.html', context={'name': 'Mosh', 'results': list(results)})
