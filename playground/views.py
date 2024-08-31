@@ -31,4 +31,10 @@ def say_hello(request):
     # annotate
     # results = Customer.objects.annotate(is_new=Value(True))[:10]
     # results = Customer.objects.annotate(new_id=F('id') + 1)
+
+    # Func
+    # results = Customer.objects.annotate(
+    #     full_name=Func(F('first_name'), Value(' '), F('last_name'), function='CONCAT'),
+    # )
+
     return render(request, template_name='hello.html', context={'name': 'Mosh', 'results': list(results)})
