@@ -1,4 +1,7 @@
+from django.db.models import Count
 from django.shortcuts import render
+
+from store.models import Customer
 
 
 def say_hello(request):
@@ -37,4 +40,6 @@ def say_hello(request):
     #     full_name=Func(F('first_name'), Value(' '), F('last_name'), function='CONCAT'),
     # )
 
+    # grouping
+    results = Customer.objects.annotate(orders_count=Count('orders')).filter(orders_count__gt=0)[:10]
     return render(request, template_name='hello.html', context={'name': 'Mosh', 'results': list(results)})
