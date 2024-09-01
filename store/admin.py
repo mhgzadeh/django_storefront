@@ -12,6 +12,7 @@ from store.models import Product, Collection, Customer, Order
 class CollectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'products_count')
     list_per_page = 10
+    search_fields = ('title',)
 
     @staticmethod
     @display(ordering='products_count')
@@ -39,11 +40,13 @@ class InventoryFilter(admin.SimpleListFilter):
 @register(Product)
 class ProductAdmin(admin.ModelAdmin):
     actions = ('clear_inventory',)
+    autocomplete_fields = ('collection',)
     list_display = ('title', 'unit_price', 'inventory_status', 'collection_title')
     list_editable = ('unit_price',)
     list_filter = ('collection', 'last_update', InventoryFilter)
     list_per_page = 10
     list_select_related = ('collection',)
+    prepopulated_fields = {'slug': ('title',)}
 
     @staticmethod
     @display(ordering='inventory')
@@ -78,5 +81,6 @@ class CustomerAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
+    autocomplete_fields = ('customer',)
     list_display = ('id', 'placed_at', 'customer')
     list_per_page = 10
