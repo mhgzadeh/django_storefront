@@ -24,7 +24,7 @@ class Product(models.Model):
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
     inventory = models.IntegerField()
     last_update = models.DateTimeField(auto_now=True)
-    collection = models.ForeignKey(to=Collection, on_delete=models.PROTECT)
+    collection = models.ForeignKey(to=Collection, on_delete=models.PROTECT, related_name='products')
     promotions = models.ManyToManyField(Promotion)
 
     def __str__(self):
@@ -55,7 +55,7 @@ class Customer(models.Model):
         return f"{self.first_name} {self.last_name}"
 
     class Meta:
-        ordering = ('first_name', 'last_name')
+        ordering = ('last_name', 'first_name')
 
 
 class Order(models.Model):
@@ -71,6 +71,9 @@ class Order(models.Model):
     placed_at = models.DateTimeField(auto_now_add=True)
     payment_status = models.CharField(max_length=1, choices=PAYMENT_STATUS_CHOICES, default=PAYMENT_STATUS_PENDING)
     customer = models.ForeignKey(to=Customer, on_delete=models.PROTECT, related_name='orders')
+
+    class Meta:
+        ordering = ('-placed_at', 'customer')
 
 
 class OrderItem(models.Model):
