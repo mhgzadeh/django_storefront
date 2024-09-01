@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.http import urlencode
 
-from store.models import Product, Collection, Customer, Order
+from store.models import Product, Collection, Customer, Order, OrderItem
 
 
 @admin.register(Collection)
@@ -46,6 +46,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ('collection', 'last_update', InventoryFilter)
     list_per_page = 10
     list_select_related = ('collection',)
+    search_fields = ('title',)
     prepopulated_fields = {'slug': ('title',)}
 
     @staticmethod
@@ -79,8 +80,18 @@ class CustomerAdmin(admin.ModelAdmin):
         return super().get_queryset(request).annotate(order_count=Count('orders'))
 
 
+# TabularInline vs StackedInline<
+class OrderItemInline(admin.TabularInline):
+    autocomplete_fields = ('product',)
+    model = OrderItem
+    extra = 1
+    min_num = 1
+    max_num = 10
+
+
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     autocomplete_fields = ('customer',)
+    inlines = (OrderItemInline,)
     list_display = ('id', 'placed_at', 'customer')
     list_per_page = 10
