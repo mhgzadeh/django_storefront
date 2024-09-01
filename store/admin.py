@@ -1,5 +1,5 @@
-from django.contrib import admin
-from django.contrib.admin import register, display
+from django.contrib import admin, messages
+from django.contrib.admin import register, display, action
 from django.db.models import Count, QuerySet
 from django.urls import reverse
 from django.utils.html import format_html
@@ -38,6 +38,7 @@ class InventoryFilter(admin.SimpleListFilter):
 
 @register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    actions = ('clear_inventory',)
     list_display = ('title', 'unit_price', 'inventory_status', 'collection_title')
     list_editable = ('unit_price',)
     list_filter = ('collection', 'last_update', InventoryFilter)
@@ -53,6 +54,11 @@ class ProductAdmin(admin.ModelAdmin):
     @display(ordering='collection')
     def collection_title(obj):
         return obj.collection.title
+
+    @action(description='Clear inventory')
+    def clear_inventory(self, request, queryset: QuerySet):
+        updated_count = queryset.update(inventory=0)
+        self.message_user(request, f"{updated_count} products were successfully updated!", messages.WARNING)
 
 
 @register(Customer)
