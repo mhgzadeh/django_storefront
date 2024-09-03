@@ -17,7 +17,10 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  path('playground/', include('playground.urls'))
-              ] + debug_toolbar_urls()
+admin.site.site_header = 'Storefront Administration'
+admin.site.index_title = 'Admin'
+
+urlpatterns = [path('admin/', admin.site.urls),
+               path('playground/', include('playground.urls')),
+               path('store/', include('store.urls')),
+               ] + debug_toolbar_urls()
