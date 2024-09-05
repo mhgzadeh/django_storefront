@@ -3,38 +3,48 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from store.models import Product, Collection
 from store.serializers import ProductSerializer, CollectionSerializer
 
 
-@api_view(['GET', 'POST'])
-def product_list(request):
-    if request.method == 'GET':
+class ProductList(APIView):
+    @staticmethod
+    def get(request):
         queryset = Product.objects.select_related('collection').all().order_by('-id')
-        serializer = ProductSerializer(queryset, many=True, context={'request': request})
-        return Response(serializer.data, status=status.HTTP_200_OK)
-    elif request.method == 'POST':
+        serializer = ProductSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    @staticmethod
+    def post(request):
         serializer = ProductSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-@api_view(['GET', 'PUT', 'DELETE'])
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    if request.method == 'GET':
+class ProductDetail(APIView):
+    @staticmethod
+    def get(request, pk):
+        product = get_object_or_404(Product, pk=pk)
         serializer = ProductSerializer(product)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-    elif request.method == 'PUT':
+        return Response(serializer.data)
+
+    @staticmethod
+    def put(request, pk):
+        product = get_object_or_404(Product, pk=pk)
         serializer = ProductSerializer(product, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
-    elif request.method == 'DELETE':
-        if product.items.all().exists():
-            return Response({'error': 'Product cannot be deleted because it is associated with an order item. '})
+
+    @staticmethod
+    def delete(request, pk):
+        product = get_object_or_404(Product, pk=pk)
+        if product.items.count() > 0:
+            return Response({'error': 'Product cannot be deleted because it is associated with an item.'},
+                            status=status.HTTP_400_BAD_REQUEST)
         product.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
