@@ -1,43 +1,31 @@
-from django.db.models import Count
 from rest_framework import status
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
 
 from store.models import Product, Collection
 from store.serializers import ProductSerializer, CollectionSerializer
 
 
-class ProductList(ListCreateAPIView):
-    queryset = Product.objects.select_related('collection').all().order_by('-id')
-    serializer_class = ProductSerializer
-
-
-class ProductDetail(RetrieveUpdateDestroyAPIView):
+class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
-    def delete(self, request, *args, **kwargs):
-        product = Product.objects.get(pk=self.kwargs['pk'])
+    def destroy(self, request, *args, **kwargs):
+        product = self.get_object()
         if product.items.count() > 0:
-            return Response(data={'error: Product cannot be deleted because it has been associated with an order .'},
-                            status=status.HTTP_406_NOT_ACCEPTABLE)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
         product.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(data={'success': f'Successfully deleted.'}, status=status.HTTP_204_NO_CONTENT)
 
 
-class CollectionList(ListCreateAPIView):
-    queryset = Collection.objects.annotate(products_count=Count('products')).all().order_by('-id')
+class CollectionViewSet(ModelViewSet):
+    queryset = Collection.objects.all()
     serializer_class = CollectionSerializer
 
-
-class CollectionDetail(RetrieveUpdateDestroyAPIView):
-    queryset = Collection.objects.annotate(products_count=Count('products')).all().order_by('-id')
-    serializer_class = CollectionSerializer
-
-    def delete(self, request, *args, **kwargs):
-        collection = Collection.objects.get(pk=self.kwargs['pk'])
+    def destroy(self, request, *args, **kwargs):
+        collection = self.get_object()
         if collection.products.count() > 0:
-            return Response(data={'error: Collection cannot be deleted because it has been associated with an order .'},
+            return Response(data={'error': 'Collection cannot be deleted because it has been associated with an item.'},
                             status=status.HTTP_406_NOT_ACCEPTABLE)
         collection.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

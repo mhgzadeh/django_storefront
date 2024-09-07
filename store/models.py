@@ -18,7 +18,7 @@ class Collection(models.Model):
         return self.title
 
     class Meta:
-        ordering = ('title',)
+        ordering = ('-id',)
 
 
 class Product(models.Model):
@@ -35,7 +35,7 @@ class Product(models.Model):
         return self.title
 
     class Meta:
-        ordering = ('title',)
+        ordering = ('-id',)
 
 
 class Customer(models.Model):
