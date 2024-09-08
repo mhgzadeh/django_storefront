@@ -1,7 +1,9 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
+from store.filters import ProductFilter
 from store.models import Product, Collection, Review
 from store.serializers import ProductSerializer, CollectionSerializer, ReviewSerializer
 
@@ -9,6 +11,8 @@ from store.serializers import ProductSerializer, CollectionSerializer, ReviewSer
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = ProductFilter
 
     def destroy(self, request, *args, **kwargs):
         product = self.get_object()
