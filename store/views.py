@@ -2,8 +2,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from store.models import Product, Collection
-from store.serializers import ProductSerializer, CollectionSerializer
+from store.models import Product, Collection, Review
+from store.serializers import ProductSerializer, CollectionSerializer, ReviewSerializer
 
 
 class ProductViewSet(ModelViewSet):
@@ -29,3 +29,13 @@ class CollectionViewSet(ModelViewSet):
                             status=status.HTTP_406_NOT_ACCEPTABLE)
         collection.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class ReviewViewSet(ModelViewSet):
+    serializer_class = ReviewSerializer
+
+    def get_queryset(self):
+        return Review.objects.filter(product_id=self.kwargs['product_pk'])
+
+    def get_serializer_context(self):
+        return {'product_pk': self.kwargs['product_pk']}
