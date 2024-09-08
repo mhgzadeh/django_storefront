@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.http import urlencode
 
-from store.models import Product, Collection, Customer, Order, OrderItem
+from store.models import Product, Collection, Customer, Order, OrderItem, Review
 
 
 @admin.register(Collection)
@@ -95,3 +95,11 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderItemInline,)
     list_display = ('id', 'placed_at', 'customer')
     list_per_page = 10
+
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    autocomplete_fields = ('product',)
+
+    class Media:
+        model = Review
