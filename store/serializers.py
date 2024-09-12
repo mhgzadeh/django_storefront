@@ -1,5 +1,6 @@
 from decimal import Decimal
 
+from django.core.validators import MinValueValidator
 from rest_framework import serializers
 
 from store.models import Product, Collection, Review, Cart, CartItem
@@ -35,10 +36,10 @@ class ReviewSerializer(serializers.ModelSerializer):
         return Review.objects.create(product_id=product_pk, **validated_data)
 
 
-class ProductCartItemSerializer(serializers.ModelSerializer):
+class CartItemProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id', 'title', 'description', 'unit_price', 'inventory')
+        fields = ('id', 'title', 'unit_price')
 
 
 class CartItemSerializer(serializers.ModelSerializer):
@@ -46,12 +47,40 @@ class CartItemSerializer(serializers.ModelSerializer):
         model = CartItem
         fields = ('cart_id', 'product', 'quantity', 'total_price')
 
-    product = ProductCartItemSerializer()
+    product = CartItemProductSerializer()
     total_price = serializers.SerializerMethodField(method_name='get_total_price')
 
     @staticmethod
     def get_total_price(obj: CartItem):
         return obj.quantity * obj.product.unit_price
+
+
+class AddCartItemSerializer(serializers.Serializer):
+    class Meta:
+        model = CartItem
+        fields = ('cart_id', 'product_id', 'quantity')
+
+    product_id = serializers.IntegerField()
+    quantity = serializers.IntegerField(validators=[MinValueValidator(1)])
+
+    @staticmethod
+    def validate_product_id(value):
+        if not Product.objects.filter(pk=value).exists():
+            raise serializers.ValidationError('Product does not exist')
+        return value
+
+    def save(self):
+        cart_id = self.context.get('cart_id')
+        product_id = self.validated_data.get('product_id')
+        quantity = self.validated_data.get('quantity')
+        try:
+            cart_item = CartItem.objects.get(cart_id=cart_id, product_id=product_id)
+            cart_item.quantity += quantity
+            cart_item.save()
+        except CartItem.DoesNotExist:
+            self.instance = CartItem.objects.create(cart_id=cart_id, **self.validated_data)
+
+        return self.instance
 
 
 class CartSerializer(serializers.ModelSerializer):
