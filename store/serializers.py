@@ -1,6 +1,5 @@
 from decimal import Decimal
 
-from django.core.validators import MinValueValidator
 from rest_framework import serializers
 
 from store.models import Product, Collection, Review, Cart, CartItem
@@ -55,13 +54,12 @@ class CartItemSerializer(serializers.ModelSerializer):
         return obj.quantity * obj.product.unit_price
 
 
-class AddCartItemSerializer(serializers.Serializer):
+class AddCartItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = CartItem
         fields = ('cart_id', 'product_id', 'quantity')
 
     product_id = serializers.IntegerField()
-    quantity = serializers.IntegerField(validators=[MinValueValidator(1)])
 
     @staticmethod
     def validate_product_id(value):
@@ -81,6 +79,12 @@ class AddCartItemSerializer(serializers.Serializer):
             self.instance = CartItem.objects.create(cart_id=cart_id, **self.validated_data)
 
         return self.instance
+
+
+class UpdateCartItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CartItem
+        fields = ('quantity',)
 
 
 class CartSerializer(serializers.ModelSerializer):

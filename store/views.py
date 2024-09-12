@@ -9,7 +9,7 @@ from store.filters import ProductFilter
 from store.models import Product, Collection, Review, Cart, CartItem
 from store.pagination import DefaultPagination
 from store.serializers import ProductSerializer, CollectionSerializer, ReviewSerializer, CartSerializer, \
-    CartItemSerializer, AddCartItemSerializer
+    CartItemSerializer, AddCartItemSerializer, UpdateCartItemSerializer
 
 
 class ProductViewSet(ModelViewSet):
@@ -59,8 +59,14 @@ class CartViewSet(CreateModelMixin, RetrieveModelMixin, DestroyModelMixin, Gener
 
 
 class CartItemViewSet(ModelViewSet):
+    http_method_names = ('get', 'post', 'patch', 'delete')
+
     def get_serializer_class(self):
-        return AddCartItemSerializer if self.request.method == 'POST' else CartItemSerializer
+        if self.request.method == 'POST':
+            return AddCartItemSerializer
+        elif self.request.method == 'PATCH':
+            return UpdateCartItemSerializer
+        return CartItemSerializer
 
     def get_queryset(self):
         return CartItem.objects.filter(cart_id=self.kwargs['cart_uuid']).select_related('product')
