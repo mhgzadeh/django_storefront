@@ -83,6 +83,9 @@ class Order(models.Model):
 
     class Meta:
         ordering = ('-placed_at', 'customer')
+        permissions = (
+            ('cancel_order', 'Can cancel order'),
+        )
 
 
 class OrderItem(models.Model):
