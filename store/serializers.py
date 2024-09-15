@@ -2,7 +2,7 @@ from decimal import Decimal
 
 from rest_framework import serializers
 
-from store.models import Product, Collection, Review, Cart, CartItem
+from store.models import Product, Collection, Review, Cart, CartItem, Customer
 
 
 class CollectionSerializer(serializers.ModelSerializer):
@@ -99,3 +99,11 @@ class CartSerializer(serializers.ModelSerializer):
     @staticmethod
     def get_total_price(obj: Cart):
         return sum(item.quantity * item.product.unit_price for item in obj.items.all())
+
+
+class CustomerSerializer(serializers.ModelSerializer):
+    user_id = serializers.IntegerField()
+
+    class Meta:
+        model = Customer
+        fields = ('id', 'phone', 'birth_date', 'membership', 'user_id')
