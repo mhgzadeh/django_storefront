@@ -67,7 +67,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'membership', 'order_count')
+    list_display = ('name', 'membership', 'order_count')
     list_editable = ('membership',)
     list_per_page = 10
     search_fields = ('first_name__istartswith', 'last_name__istartswith')
