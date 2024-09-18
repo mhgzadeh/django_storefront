@@ -2,7 +2,7 @@ from decimal import Decimal
 
 from rest_framework import serializers
 
-from store.models import Product, Collection, Review, Cart, CartItem, Customer
+from store.models import Product, Collection, Review, Cart, CartItem, Customer, Order, OrderItem
 
 
 class CollectionSerializer(serializers.ModelSerializer):
@@ -107,3 +107,27 @@ class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         fields = ('id', 'phone', 'birth_date', 'membership', 'user_id')
+
+
+class OrderItemProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ('id', 'title', 'description', 'unit_price', 'inventory')
+
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderItem
+        fields = ('id', 'order_id', 'product', 'quantity', 'unit_price')
+
+    order_id = serializers.IntegerField()
+    product = OrderItemProductSerializer()
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = ('id', 'placed_at', 'payment_status', 'customer', 'items')
+
+    items = OrderItemSerializer(many=True)
+    customer = CustomerSerializer()
