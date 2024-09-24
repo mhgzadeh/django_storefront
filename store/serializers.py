@@ -134,6 +134,12 @@ class OrderSerializer(serializers.ModelSerializer):
     customer = CustomerSerializer()
 
 
+class UpdateOrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = ('payment_status',)
+
+
 class CreateOrderSerializer(serializers.Serializer):
     cart_uuid = serializers.UUIDField()
 
