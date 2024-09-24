@@ -140,9 +140,9 @@ class CreateOrderSerializer(serializers.Serializer):
     @staticmethod
     def validate_cart_uuid(cart_uuid):
         if not Cart.objects.filter(uuid=cart_uuid).exists():
-            raise serializers.ValidationError('Cart does not exist')
+            raise serializers.ValidationError('Cart does not exist.')
         if CartItem.objects.filter(cart_id=cart_uuid).count() == 0:
-            raise serializers.ValidationError('The Cart has no items')
+            raise serializers.ValidationError('The cart has no options.')
         return cart_uuid
 
     def save(self, **kwargs):
