@@ -92,8 +92,8 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(to=Order, on_delete=models.PROTECT, related_name='items')
-    product = models.ForeignKey(to=Product, on_delete=models.PROTECT, related_name='items')
+    order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name='items')
+    product = models.ForeignKey(to=Product, on_delete=models.CASCADE, related_name='items')
     quantity = models.PositiveSmallIntegerField()
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
 
@@ -113,7 +113,7 @@ class Cart(models.Model):
 
 
 class CartItem(models.Model):
-    cart = models.ForeignKey(to=Cart, to_field='uuid', on_delete=models.PROTECT, related_name='items')
+    cart = models.ForeignKey(to=Cart, to_field='uuid', on_delete=models.CASCADE, related_name='items')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveSmallIntegerField(validators=[MinValueValidator(1)])
 
