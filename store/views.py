@@ -8,12 +8,12 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
 
 from store.filters import ProductFilter
-from store.models import Product, Collection, Review, Cart, CartItem, Customer, Order
+from store.models import Product, Collection, Review, Cart, CartItem, Customer, Order, ProductImage
 from store.pagination import DefaultPagination
 from store.permissions import IsAdminOrReadOnly, FullDjangoModelPermissions, ViewCustomerHistoryPermissions
 from store.serializers import ProductSerializer, CollectionSerializer, ReviewSerializer, CartSerializer, \
     CartItemSerializer, AddCartItemSerializer, UpdateCartItemSerializer, CustomerSerializer, OrderSerializer, \
-    CreateOrderSerializer, UpdateOrderSerializer
+    CreateOrderSerializer, UpdateOrderSerializer, ProductImageSerializer
 
 
 class ProductViewSet(ModelViewSet):
@@ -32,6 +32,18 @@ class ProductViewSet(ModelViewSet):
             return Response(status=status.HTTP_400_BAD_REQUEST)
         product.delete()
         return Response(data={'success': f'Successfully deleted.'}, status=status.HTTP_204_NO_CONTENT)
+
+
+class ProductImageViewSet(ModelViewSet):
+    serializer_class = ProductImageSerializer
+
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context['product_id'] = self.kwargs['product_pk']
+        return context
+
+    def get_queryset(self):
+        return ProductImage.objects.filter(product_id=self.kwargs['product_pk'])
 
 
 class CollectionViewSet(ModelViewSet):
