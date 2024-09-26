@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fb085908-42a1-4fdb-a542-a7f8af194619" name="Update the commit" comment="validating uploaded file size">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/signals/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/signals/handlers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/serializers_with_comments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/token.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/update_serial_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/views_class_based.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/views_function_based.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/views_generic_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dog.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/store/images/dog.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/store/images/dog_SNLN674.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/templates/hello.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/filters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0002_alter_customer_options_remove_customer_email_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0003_alter_customer_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0004_alter_order_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0005_alter_customer_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0006_alter_cartitem_cart.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0007_alter_orderitem_order_alter_orderitem_product.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0008_productimage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/pagination.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/permissions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/signals/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/signals/handlers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/validators.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storefront/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storefront/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storefront/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storefront/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storefront/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/views.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="useSoftWraps" value="true" />
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SQL File" />
+        <option value="Gherkin feature file" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <branch-grouping />
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="adding_signals" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;mhgzadeh&quot;,
+      &quot;author&quot;: &quot;mhgzadeh&quot;,
+      &quot;label&quot;: &quot;documentation&quot;
+    },
+    {
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;mhgzadeh&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;author&quot;: &quot;mhgzadeh&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:mhgzadeh/django_storefront.git&quot;,
+    &quot;accountId&quot;: &quot;c51d2d23-fa1f-49e1-8606-3a2350f49978&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2l4I3nuPMJPvKQYIKME8EMWXbng" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.storefront runserver.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/mohammad/mohammad/code/academy/django/storefront/storefront_backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [],
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
+    ],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PostgreSQL"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/store" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/store/signals" />
+      <recent name="$PROJECT_DIR$/helper" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/store" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.storefront runserver">
+    <configuration name="store_cart_id_seq.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="c38c43fb-327b-42dd-9c15-e57c3beb09ba/database/storefront/schema/public/sequence/store_cart_id_seq.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="storefront runserver" type="PythonConfigurationType" factoryName="Python">
+      <module name="storefront" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.10 (storefront_venv)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="manage" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.store_cart_id_seq.sql" />
+        <item itemvalue="Database Script.store_cart_id_seq.sql" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.22855.92" />
+        <option value="bundled-python-sdk-b068d85d1acf-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.22855.92" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb085908-42a1-4fdb-a542-a7f8af194619" name="Changes" comment="" />
+      <created>1724432724549</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1724432724549</updated>
+      <workItem from="1724487926947" duration="80000" />
+      <workItem from="1724488017217" duration="29000" />
+      <workItem from="1724488155409" duration="880000" />
+      <workItem from="1724576892324" duration="2831000" />
+      <workItem from="1724579734170" duration="23905000" />
+      <workItem from="1724736643810" duration="1503000" />
+      <workItem from="1724960305962" duration="6288000" />
+      <workItem from="1724966677001" duration="27000" />
+      <workItem from="1725132133401" duration="5433000" />
+      <workItem from="1725139139749" duration="56000" />
+      <workItem from="1725172594314" duration="12904000" />
+      <workItem from="1725220880280" duration="3940000" />
+      <workItem from="1725393109864" duration="4702000" />
+      <workItem from="1725399124054" duration="24000" />
+      <workItem from="1725473944721" duration="9328000" />
+      <workItem from="1725486010456" duration="3000" />
+      <workItem from="1725567793841" duration="1999000" />
+      <workItem from="1725700850183" duration="17046000" />
+      <workItem from="1725787065000" duration="7881000" />
+      <workItem from="1725803709631" duration="3468000" />
+      <workItem from="1725891520668" duration="630000" />
+      <workItem from="1725911200242" duration="1444000" />
+      <workItem from="1725913296925" duration="2591000" />
+      <workItem from="1725957558281" duration="52000" />
+      <workItem from="1726066534524" duration="3722000" />
+      <workItem from="1726128832378" duration="2415000" />
+      <workItem from="1726131256043" duration="965000" />
+      <workItem from="1726171308757" duration="5497000" />
+      <workItem from="1726390348852" duration="14845000" />
+      <workItem from="1726513255407" duration="7559000" />
+      <workItem from="1726641468304" duration="13000" />
+      <workItem from="1726775483968" duration="1845000" />
+      <workItem from="1726900712288" duration="653000" />
+      <workItem from="1726901478052" duration="9558000" />
+      <workItem from="1727164006768" duration="1563000" />
+      <workItem from="1727185572532" duration="9588000" />
+      <workItem from="1727289320755" duration="1231000" />
+      <workItem from="1727290695239" duration="172000" />
+      <workItem from="1727290967736" duration="7844000" />
+    </task>
+    <task id="LOCAL-00037" summary="serializing relationships">
+      <option name="closed" value="true" />
+      <created>1725475795821</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1725475795821</updated>
+    </task>
+    <task id="LOCAL-00038" summary="data validation; saving an object; deleting an object;">
+      <option name="closed" value="true" />
+      <created>1725485852943</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1725485852943</updated>
+    </task>
+    <task id="LOCAL-00039" summary="update related_names of product and order in the orderitem">
+      <option name="closed" value="true" />
+      <created>1725485958296</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1725485958296</updated>
+    </task>
+    <task id="LOCAL-00040" summary="function based views">
+      <option name="closed" value="true" />
+      <created>1725569765491</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1725569765491</updated>
+    </task>
+    <task id="LOCAL-00041" summary="class based view">
+      <option name="closed" value="true" />
+      <created>1725569780281</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1725569780281</updated>
+    </task>
+    <task id="LOCAL-00042" summary="backup for class based views">
+      <option name="closed" value="true" />
+      <created>1725702234515</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1725702234515</updated>
+    </task>
+    <task id="LOCAL-00043" summary="generic views">
+      <option name="closed" value="true" />
+      <created>1725744690960</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1725744690960</updated>
+    </task>
+    <task id="LOCAL-00044" summary="backup based on generic views">
+      <option name="closed" value="true" />
+      <created>1725744721677</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1725744721677</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Routers">
+      <option name="closed" value="true" />
+      <created>1725747282072</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1725747282072</updated>
+    </task>
+    <task id="LOCAL-00046" summary="add review model + admin">
+      <option name="closed" value="true" />
+      <created>1725788028799</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1725788028799</updated>
+    </task>
+    <task id="LOCAL-00047" summary="add review model + admin + serializer">
+      <option name="closed" value="true" />
+      <created>1725788166825</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1725788166825</updated>
+    </task>
+    <task id="LOCAL-00048" summary="drf nested routers">
+      <option name="closed" value="true" />
+      <created>1725794237163</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1725794237163</updated>
+    </task>
+    <task id="LOCAL-00049" summary="add django_filter">
+      <option name="closed" value="true" />
+      <created>1725807372138</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1725807372138</updated>
+    </task>
+    <task id="LOCAL-00050" summary="add search filter">
+      <option name="closed" value="true" />
+      <created>1725807585030</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1725807585030</updated>
+    </task>
+    <task id="LOCAL-00051" summary="add ordering">
+      <option name="closed" value="true" />
+      <created>1725807792182</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1725807792182</updated>
+    </task>
+    <task id="LOCAL-00052" summary="pagination">
+      <option name="closed" value="true" />
+      <created>1725807967357</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1725807967357</updated>
+    </task>
+    <task id="LOCAL-00053" summary="refactor card and carditem with uuid">
+      <option name="closed" value="true" />
+      <created>1726066629677</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1726066629677</updated>
+    </task>
+    <task id="LOCAL-00054" summary="update a cart">
+      <option name="closed" value="true" />
+      <created>1726173290342</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1726173290342</updated>
+    </task>
+    <task id="LOCAL-00055" summary="add validator">
+      <option name="closed" value="true" />
+      <created>1726173304716</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1726173304716</updated>
+    </task>
+    <task id="LOCAL-00056" summary="update a cart">
+      <option name="closed" value="true" />
+      <created>1726176409680</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1726176409680</updated>
+    </task>
+    <task id="LOCAL-00057" summary="add core app">
+      <option name="closed" value="true" />
+      <created>1726403085415</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1726403085415</updated>
+    </task>
+    <task id="LOCAL-00058" summary="update customer based on the core user">
+      <option name="closed" value="true" />
+      <created>1726403123959</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1726403123959</updated>
+    </task>
+    <task id="LOCAL-00059" summary="rerun migrations">
+      <option name="closed" value="true" />
+      <created>1726403160114</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1726403160114</updated>
+    </task>
+    <task id="LOCAL-00060" summary="add AUTH_USER_MODEL">
+      <option name="closed" value="true" />
+      <created>1726403201137</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1726403201137</updated>
+    </task>
+    <task id="LOCAL-00061" summary="custom permission">
+      <option name="closed" value="true" />
+      <created>1726425477994</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1726425477994</updated>
+    </task>
+    <task id="LOCAL-00062" summary="init djoser; registering api">
+      <option name="closed" value="true" />
+      <created>1726426893155</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1726426893155</updated>
+    </task>
+    <task id="LOCAL-00063" summary="building a profile api">
+      <option name="closed" value="true" />
+      <created>1726427426707</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1726427426708</updated>
+    </task>
+    <task id="LOCAL-00064" summary="getting current user profile">
+      <option name="closed" value="true" />
+      <created>1726432233616</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1726432233616</updated>
+    </task>
+    <task id="LOCAL-00065" summary="applying permissions">
+      <option name="closed" value="true" />
+      <created>1726433833964</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1726433833964</updated>
+    </task>
+    <task id="LOCAL-00066" summary="applying custom permissions">
+      <option name="closed" value="true" />
+      <created>1726518387890</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1726518387890</updated>
+    </task>
+    <task id="LOCAL-00067" summary="applying django model permission">
+      <option name="closed" value="true" />
+      <created>1726520460031</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1726520460031</updated>
+    </task>
+    <task id="LOCAL-00068" summary="applying custom model permissions">
+      <option name="closed" value="true" />
+      <created>1726522500266</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1726522500266</updated>
+    </task>
+    <task id="LOCAL-00069" summary="applying custom model permissions">
+      <option name="closed" value="true" />
+      <created>1726522514546</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1726522514547</updated>
+    </task>
+    <task id="LOCAL-00070" summary="applying permission">
+      <option name="closed" value="true" />
+      <created>1726777355013</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1726777355015</updated>
+    </task>
+    <task id="LOCAL-00071" summary="add new json web token">
+      <option name="closed" value="true" />
+      <created>1726777383549</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1726777383549</updated>
+    </task>
+    <task id="LOCAL-00072" summary="add new json web token">
+      <option name="closed" value="true" />
+      <created>1727199552591</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1727199552591</updated>
+    </task>
+    <task id="LOCAL-00073" summary="returning the created order">
+      <option name="closed" value="true" />
+      <created>1727199581808</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1727199581808</updated>
+    </task>
+    <task id="LOCAL-00074" summary="data validation">
+      <option name="closed" value="true" />
+      <created>1727200930118</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1727200930118</updated>
+    </task>
+    <task id="LOCAL-00075" summary="data validation">
+      <option name="closed" value="true" />
+      <created>1727201028345</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1727201028345</updated>
+    </task>
+    <task id="LOCAL-00076" summary="changing the cart text">
+      <option name="closed" value="true" />
+      <created>1727201249850</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1727201249850</updated>
+    </task>
+    <task id="LOCAL-00077" summary="changing the cart text">
+      <option name="closed" value="true" />
+      <created>1727201283145</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1727201283145</updated>
+    </task>
+    <task id="LOCAL-00078" summary="updating an order">
+      <option name="closed" value="true" />
+      <created>1727207391009</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1727207391009</updated>
+    </task>
+    <task id="LOCAL-00079" summary="using signal to create a customer after creating user; replace get_or_create to get">
+      <option name="closed" value="true" />
+      <created>1727208310519</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1727208310519</updated>
+    </task>
+    <task id="LOCAL-00080" summary="creating custom signals">
+      <option name="closed" value="true" />
+      <created>1727210324671</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1727210324671</updated>
+    </task>
+    <task id="LOCAL-00081" summary="managing media files">
+      <option name="closed" value="true" />
+      <created>1727291426194</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1727291426194</updated>
+    </task>
+    <task id="LOCAL-00082" summary="adding images to product">
+      <option name="closed" value="true" />
+      <created>1727291822133</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1727291822134</updated>
+    </task>
+    <task id="LOCAL-00083" summary="building an api to upload images">
+      <option name="closed" value="true" />
+      <created>1727295639640</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1727295639640</updated>
+    </task>
+    <task id="LOCAL-00084" summary="returning the images from the api">
+      <option name="closed" value="true" />
+      <created>1727380733828</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1727380733828</updated>
+    </task>
+    <task id="LOCAL-00085" summary="validating uploaded file size">
+      <option name="closed" value="true" />
+      <created>1727382951006</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1727382951006</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="date">
+                    <value>
+                      <list>
+                        <option value="1724514405601" />
+                        <option value="" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="parent">
+                    <value>
+                      <list>
+                        <option value="0" />
+                        <option value="1" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="*" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="add core app" />
+    <MESSAGE value="update customer based on the core user" />
+    <MESSAGE value="rerun migrations" />
+    <MESSAGE value="add AUTH_USER_MODEL" />
+    <MESSAGE value="custom permission" />
+    <MESSAGE value="init djoser; registering api" />
+    <MESSAGE value="building a profile api" />
+    <MESSAGE value="getting current user profile" />
+    <MESSAGE value="applying permissions" />
+    <MESSAGE value="applying custom permissions" />
+    <MESSAGE value="applying django model permission" />
+    <MESSAGE value="applying custom model permissions" />
+    <MESSAGE value="applying permission" />
+    <MESSAGE value="add new json web token" />
+    <MESSAGE value="returning the created order" />
+    <MESSAGE value="data validation" />
+    <MESSAGE value="changing the cart text" />
+    <MESSAGE value="updating an order" />
+    <MESSAGE value="using signal to create a customer after creating user; replace get_or_create to get" />
+    <MESSAGE value="creating custom signals" />
+    <MESSAGE value="managing media files" />
+    <MESSAGE value="adding images to product" />
+    <MESSAGE value="building an api to upload images" />
+    <MESSAGE value="returning the images from the api" />
+    <MESSAGE value="validating uploaded file size" />
+    <option name="LAST_COMMIT_MESSAGE" value="validating uploaded file size" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/storefront$storefront_runserver.coverage" NAME="storefront runserver Coverage Results" MODIFIED="1727295039362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
