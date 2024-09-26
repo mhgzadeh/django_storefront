@@ -18,7 +18,7 @@ const setProgress = (percentCompleted) => {
 };
 
 const uploadFile = (file) => {
-    const apiUrl = 'http://127.0.0.1:8000/store/products/1/images/';
+    const apiUrl = 'http://127.0.0.1:8000/store/products/1001/images/';
 
     const formData = new FormData();
     // "image" is the key that our endpoint expects.
