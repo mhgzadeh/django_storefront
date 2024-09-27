@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.http import urlencode
 
-from store.models import Product, Collection, Customer, Order, OrderItem, Review
+from store.models import Product, Collection, Customer, Order, OrderItem, Review, ProductImage
 
 
 @admin.register(Collection)
@@ -37,10 +37,23 @@ class InventoryFilter(admin.SimpleListFilter):
             return queryset.filter(inventory__lt=10)
 
 
+class ProductImageInline(admin.StackedInline):
+    model = ProductImage
+    readonly_fields = ('thumbnail',)
+
+    @staticmethod
+    def thumbnail(obj):
+        if obj.image.name != '':
+            return format_html(f'<img src="{obj.image.url}" class="thumbnail">')
+        print(f'<img src="{obj.image.url}" class="thumbnail">')
+        return ''
+
+
 @register(Product)
 class ProductAdmin(admin.ModelAdmin):
     actions = ('clear_inventory',)
     autocomplete_fields = ('collection',)
+    inlines = (ProductImageInline,)
     list_display = ('title', 'unit_price', 'inventory_status', 'collection_title')
     list_editable = ('unit_price',)
     list_filter = ('collection', 'last_update', InventoryFilter)
@@ -63,6 +76,11 @@ class ProductAdmin(admin.ModelAdmin):
     def clear_inventory(self, request, queryset: QuerySet):
         updated_count = queryset.update(inventory=0)
         self.message_user(request, f"{updated_count} products were successfully updated!", messages.WARNING)
+
+    class Media:
+        css = {
+            'all': ('store/css/admin.css',),
+        }
 
 
 @register(Customer)
