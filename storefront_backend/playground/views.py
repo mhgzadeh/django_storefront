@@ -2,6 +2,8 @@ from django.core.mail import BadHeaderError
 from django.shortcuts import render
 from templated_mail.mail import BaseEmailMessage
 
+from playground.tasks import notify_customers
+
 
 def say_hello(request):
     # products = Product.objects.all()
@@ -49,9 +51,12 @@ def say_hello(request):
     # results = Product.objects.annotate(discounted_price=discounted_price)
     # return render(request, template_name='hello.html', context={'name': 'Mosh', 'results': list(results)})
 
-    try:
-        message = BaseEmailMessage(template_name='emails/hello.html', context={'name': 'Mohammad'})
-        message.send(['m.hgzadeh@gmail.com'])
-    except BadHeaderError as e:
-        print(e)
+    # EMAILS
+    # try:
+    #     message = BaseEmailMessage(template_name='emails/hello.html', context={'name': 'Mohammad'})
+    #     message.send(['m.hgzadeh@gmail.com'])
+    # except BadHeaderError as e:
+    #     print(e)
+
+    notify_customers.delay('Hello')
     return render(request, template_name='hello.html', context={'name': 'Mohammad'})
