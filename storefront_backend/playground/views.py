@@ -1,7 +1,6 @@
-from django.db.models import ExpressionWrapper, F, DecimalField
+from django.core.mail import BadHeaderError
 from django.shortcuts import render
-
-from store.models import Product
+from templated_mail.mail import BaseEmailMessage
 
 
 def say_hello(request):
@@ -45,7 +44,14 @@ def say_hello(request):
 
     # Expression Wrapper
 
-    discounted_price = ExpressionWrapper(
-        F('unit_price') * 0.8, output_field=DecimalField(max_digits=12, decimal_places=2))
-    results = Product.objects.annotate(discounted_price=discounted_price)
-    return render(request, template_name='hello.html', context={'name': 'Mosh', 'results': list(results)})
+    # discounted_price = ExpressionWrapper(
+    #     F('unit_price') * 0.8, output_field=DecimalField(max_digits=12, decimal_places=2))
+    # results = Product.objects.annotate(discounted_price=discounted_price)
+    # return render(request, template_name='hello.html', context={'name': 'Mosh', 'results': list(results)})
+
+    try:
+        message = BaseEmailMessage(template_name='emails/hello.html', context={'name': 'Mohammad'})
+        message.send(['m.hgzadeh@gmail.com'])
+    except BadHeaderError as e:
+        print(e)
+    return render(request, template_name='hello.html', context={'name': 'Mohammad'})
